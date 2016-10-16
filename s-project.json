@@ -1,5 +1,7 @@
 {
   "name": "serverless-candogs",
   "custom": {},
-  "plugins": []
+  "plugins": [
+    "serverless-cors-plugin"
+  ]
 }
