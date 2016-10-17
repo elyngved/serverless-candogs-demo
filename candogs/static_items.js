@@ -1,21 +1,21 @@
 const STATIC_ITEMS = [
   {
-    slug: 'apples',
+    id: 'apples',
     title: 'Apples',
     answer: "Yes!"
   },
   {
-    slug: 'bananas',
+    id: 'bananas',
     title: 'Bananas',
     answer: "Yes!"
   },
   {
-    slug: 'carrots',
+    id: 'carrots',
     title: 'Carrots',
     answer: "Yes!"
   },
   {
-    slug: 'grapes',
+    id: 'grapes',
     title: 'Grapes',
     answer: "No!"
   }

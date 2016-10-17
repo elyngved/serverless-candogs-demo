@@ -1,10 +1,10 @@
 {
-  "name": "items_index",
+  "name": "foods",
   "runtime": "nodejs4.3",
   "description": "Serverless Lambda function for project: serverless-candogs",
   "customName": false,
   "customRole": false,
-  "handler": "functions/items_index/handler.handler",
+  "handler": "candogs/foods/handler.handler",
   "timeout": 6,
   "memorySize": 1024,
   "authorizer": {},
@@ -17,7 +17,7 @@
   },
   "endpoints": [
     {
-      "path": "items_index",
+      "path": "foods",
       "method": "GET",
       "type": "AWS",
       "authorizationType": "none",
