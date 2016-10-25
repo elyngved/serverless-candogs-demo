@@ -1,0 +1,42 @@
+{
+  "apiDefault200Response": {
+    "statusCode": "200",
+    "responseParameters": {
+      "method.response.header.Access-Control-Allow-Origin": "'*'"
+    },
+    "responseModels": {},
+    "responseTemplates": {
+      "application/json": ""
+    }
+  },
+  "api400ErrorMatchResponse": {
+    "statusCode": "400",
+    "selectionPattern": "MlnError.*|Task timed out.*",
+    "responseTemplates": {
+      "application/json": ""
+    },
+    "responseParameters": {
+      "method.response.header.Access-Control-Allow-Origin": "'*'"
+    }
+  },
+  "apiCorsOptionsResponse": {
+    "default": {
+      "statusCode": "200",
+      "responseParameters": {
+        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Access-Token'",
+        "method.response.header.Access-Control-Allow-Methods": "'GET,OPTIONS,HEAD,DELETE,PATCH,POST,PUT'",
+        "method.response.header.Access-Control-Allow-Origin": "'*'",
+        "method.response.header.Access-Control-Max-Age": "'3600'"
+      },
+      "responseModels": {},
+      "responseTemplates": {
+        "application/json": ""
+      }
+    }
+  },
+  "apiCorsRequestTemplate": {
+    "application/json": {
+      "statusCode": 200
+    }
+  }
+}
