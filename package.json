@@ -10,6 +10,8 @@
     "url": "git://github.com/"
   },
   "dependencies": {
+    "aws-api-gateway-client": "^0.1.8",
+    "jsonwebtoken": "^7.1.9",
     "serverless-cors-plugin": "^0.4.2"
   }
 }

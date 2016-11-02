@@ -2,18 +2,17 @@
 
 const doc = require('dynamodb-doc');
 const dynamo = new doc.DynamoDB();
-const tableName = 'candogs-demo-items';
+const dbInfo = require('../util/dbInfo');
 
 module.exports.handler = function(event, context, cb) {
-  var category = 'eat';
   var params = {
-    TableName: tableName,
+    TableName: dbInfo.tableName,
     KeyConditionExpression: '#cat = :cat',
     ExpressionAttributeNames: {
       '#cat': 'category'
     },
     ExpressionAttributeValues: {
-      ':cat': category
+      ':cat': dbInfo.foodCategory
     }
   };
 

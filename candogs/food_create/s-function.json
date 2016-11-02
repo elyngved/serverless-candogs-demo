@@ -6,7 +6,7 @@
   "customRole": false,
   "handler": "candogs/food_create/handler.handler",
   "timeout": 6,
-  "memorySize": 1024,
+  "memorySize": 128,
   "authorizer": {},
   "custom": {
     "excludePatterns": []
@@ -21,22 +21,25 @@
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": {
-        "application/json": "{\n \"accessToken\": \"$input.params().header.get('X-Access-Token')\",\n \"body\": $input.json('$')\n}"
+        "application/json": "{\n \"authToken\": \"$input.params().header.get('X-Auth-Token')\",\n \"body\": $input.json('$')\n}"
       },
       "responses": {
         "400": {
-          "statusCode": "400"
+          "statusCode": "400",
+          "responseParameters": {
+            "method.response.header.Access-Control-Allow-Origin": "'*'"
+          }
+        },
+        "401": {
+          "statusCode": "401",
+          "responseParameters": {
+            "method.response.header.Access-Control-Allow-Origin": "'*'"
+          }
         },
         "default": {
           "statusCode": "200",
           "responseParameters": {
             "method.response.header.Access-Control-Allow-Origin": "'*'"
-          },
-          "responseModels": {
-            "application/json;charset=UTF-8": "Empty"
-          },
-          "responseTemplates": {
-            "application/json;charset=UTF-8": ""
           }
         }
       }

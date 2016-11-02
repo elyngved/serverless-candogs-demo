@@ -2,20 +2,15 @@
 
 const doc = require('dynamodb-doc');
 const dynamo = new doc.DynamoDB();
-
-const tableName = 'candogs-demo-items';
-
-// const _ = require('lodash');
-// const STATIC_ITEMS = require('../static_items');
+const dbInfo = require('../util/dbInfo');
 
 module.exports.handler = function(event, context) {
-  var category = 'eat';
   var slug = event.foodId;
 
   var params = {
-    TableName: tableName,
+    TableName: dbInfo.tableName,
     Key: {
-      category: category,
+      category: dbInfo.foodCategory,
       slug: slug
     }
   };
@@ -36,25 +31,4 @@ module.exports.handler = function(event, context) {
       }
     }
   });
-
-
-  // var food = _.find(STATIC_ITEMS, { id: event.foodId });
-  // if (food) {
-  //   return cb(null, {
-  //     data: {
-  //       food: food
-  //     }
-  //   });
-  // } else {
-  //   var response = {
-  //     status: 400,
-  //     errors: [
-  //       {
-  //         source: "foodId",
-  //         message: "Item does not exist"
-  //       }
-  //     ]
-  //   }
-  //   context.fail(JSON.stringify(response));
-  // }
 };
